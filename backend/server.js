@@ -8,8 +8,27 @@ dotenv.config();
 const app = express();
 
 // Middleware
+// Normalize multiple consecutive slashes (e.g. //api/projects -> /api/projects)
+app.use((req, res, next) => {
+    req.url = req.url.replace(/\/{2,}/g, '/');
+    next();
+});
+
+const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://portfolio-coral-six-glzj2w31yw.vercel.app"
+].filter(Boolean);
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+            return callback(null, true);
+        }
+        return callback(null, true);
+    },
     credentials: true
 }));
 app.use(express.json());
