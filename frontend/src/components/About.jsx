@@ -90,7 +90,7 @@ const About = () => {
                         </div>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="images/Megnila_Das_CV.pdf" download className="btn-primary">Download CV</a>
+                            <a href="https://drive.google.com/file/d/1J1PtnTsJRkry68CYUpdQp_YZ0FxGuhjP/view?usp=sharing" download className="btn-primary">Download CV</a>
                             <a href="#contact" className="btn-secondary">Hire Me →</a>
                         </div>
                     </motion.div>
