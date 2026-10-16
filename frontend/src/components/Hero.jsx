@@ -148,7 +148,7 @@ const TERMINAL_LINES = [
     '$ whoami',
     'meghnila.das — aws cloud engineer',
     '$ aws sts get-caller-identity',
-    'arn:aws:iam::123456789012:user/meghnila',
+    'arn:aws:iam::12345678902:user/meghnila',
     '$ terraform plan',
     'Plan: 12 to add, 0 to change, 0 to destroy.',
     '$ deploy --prod',
